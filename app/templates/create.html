@@ -1,0 +1,21 @@
+{% extends 'layouts/main.html' %}
+
+{% block title %}
+    Create | CRUD
+{% endblock title %}
+    
+{% block content %}
+    <h1 class="text-center">Create Datas</h1>
+    <form action="" method="post" class="mt-4 p-2">
+        {% csrf_token %}
+        <input type="text" name="name" id="name" class="form-control " placeholder="Enter Your Name">
+        <br>
+        <input type="number" name="phone" id="name" class="form-control mt-1" placeholder="Enter Phone Number">
+        <br>
+        <textarea name="para" id="para" cols="100" rows="6" class="mt-1" placeholder="Enter Details"></textarea>
+        <br>
+        <input type="submit" value="SUBMIT" name="" id="" class="form-control btn btn-primary mt-3 rounded  ">
+        <a href="/" class="btn btn-danger form-control mt-4">Cancel</a>
+    </form>
+{% endblock content %}
+    

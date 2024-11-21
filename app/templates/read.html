@@ -1,0 +1,15 @@
+{% extends 'layouts/main.html' %}
+{% block title %}
+    Read | CRUD | {{datas.id}}
+{% endblock title %}
+
+
+{% block content %}
+    <h1 class="text-center">Content Read Page</h1>
+    <div class="mt-2">
+        <h2 class="text-primary">{{datas.name}}</h2>
+        <h4 class="mt-2">{{datas.phone}}</h4>
+        <h6 class="mt-2 text-danger">{{datas.para}}</h6>
+    </div>
+{% endblock content %}
+    
