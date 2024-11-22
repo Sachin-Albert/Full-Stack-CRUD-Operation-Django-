@@ -1,7 +1,12 @@
 {% extends 'layouts/main.html'%}
+
+{% block title %}
+    Create | CRUD
+{% endblock title %}
+    
 {% block content %}
 
-    <h1 class="text-center"> CRUD OPERATION </h1>
+    <marquee class="mt-2 mb-3" behavior="" scrollamount="10px" direction="" style="margin: 0px 80px; border-radius: 20px; padding-top: 4px; box-shadow: 2px 2px 3px gray;"><h2> CRUD OPERATION</h2></marquee>
     <a href="create" class="btn  btn-primary fs-1" style="border-radius: 100%; padding: 10px 25px;"><i class="fa fa-plus"></i></a> 
 <div class="row mt-3">
         {% for data in datas %}
@@ -13,8 +18,12 @@
                         <a href="read/{{data.id}}" class="btn btn-success ">Read More.. <i class="fa fa-book"></i> </a>
                         <a href="update/{{data.id}}" class="btn btn-warning ms-1">Update <i class="fa fa-upload"></i></a>
                         <a href="delete/{{data.id}}" class="btn btn-danger ms-1"
-                        onclick="if(confirm('Are you sure you want to delete this data?')){ return true;}
-                        else { return false; }">
+                        onclick="if(confirm('Are you sure you want to delete this data?')){
+                             return true;
+                            }
+                        else {
+                             return false; 
+                             }">
                          Delete <i class="fa fa-trash"></i> </a>
                     </div>
                 </div>
