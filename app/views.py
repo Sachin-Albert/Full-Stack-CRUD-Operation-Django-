@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import createdata
+from .models import createdata,Register
 from django.http import HttpResponse
 
 def index(request):
@@ -36,3 +36,18 @@ def deleteitem(request,id):
     data = createdata.objects.get(id=id)
     data.delete()
     return redirect('/')
+
+def register(request):
+    if request.method == 'POST':
+        uname = request.POST['name']
+        uphone = request.POST['phone']
+        uemail = request.POST['email']
+        upassword = request.POST['password']
+        u_cpassword = request.POST['c_password']
+        if upassword == u_cpassword:
+             data = Register.objects.create(name=uname,phone=uphone,email=uemail,password=upassword,cpassword=u_cpassword)
+             data.save()
+             return redirect('/')
+        else:
+            return HttpResponse ('Password Mismatch')
+    return render(request,'register.html')

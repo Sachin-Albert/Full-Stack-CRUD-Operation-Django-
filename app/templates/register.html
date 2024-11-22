@@ -1,0 +1,26 @@
+{% extends 'layouts/main.html'%}
+
+{% block title %}
+    Registration | CRUD
+{% endblock title %}
+
+
+{% block content %}
+<h1 class="text-center">Register Form</h1>
+<form action="" method="post" class="mt-4 p-2">
+    {% csrf_token %}
+    <input type="text" name="name" id="name" class="form-control " placeholder="Enter Your Name">
+    <br>
+    <input type="number" name="phone" id="name" class="form-control mt-1" placeholder="Enter Phone Number">
+    <br>
+    <input type="email" name="email" id="email" class="form-control mt-1" placeholder="Enter Your Email">
+    <br>
+    <input type="password" name="password" id="password" class="form-control mt-1" placeholder="Enter The Pasword" >
+    <br>
+    <input type="password" name="c_password" id="c_password" class="form-control mt-1" placeholder="Enter The Confirm Password">
+    <br> 
+    <input type="submit" value="SUBMIT" name="" id="" class="form-control btn btn-primary mt-3 rounded  ">
+    <a href="/" class="btn btn-danger form-control mt-4">Cancel</a>
+</form>
+{% endblock content %}
+    
